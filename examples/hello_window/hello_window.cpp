@@ -1,7 +1,6 @@
 #include <Windows.h>
 
 #include <donut/app/DeviceManager.h>
-#include <nvrhi/nvrhi.h>
 
 using namespace donut;
 
