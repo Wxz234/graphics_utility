@@ -1,6 +1,7 @@
 #include <Windows.h>
 
 #include <donut/app/DeviceManager.h>
+#include <GLFW/glfw3.h>
 
 using namespace donut;
 
@@ -11,11 +12,12 @@ public:
 	bool Init() {
 		return true;
 	}
-
-	void Animate(float fElapsedTimeSeconds) override {
-		//GetDeviceManager()->SetInformativeWindowTitle("Hello Window");
-	}
 };
+
+void freezeWindow(GLFWwindow *window) {
+	bool enable = false;
+	glfwSetWindowAttrib(window, GLFW_RESIZABLE, enable);
+}
 
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow) {
 	app::DeviceManager* deviceManager = app::DeviceManager::Create(nvrhi::GraphicsAPI::D3D12);
@@ -29,6 +31,8 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		log::fatal("Cannot initialize a graphics device with the requested parameters");
 		return 1;
 	}
+
+	freezeWindow(deviceManager->GetWindow());
 
 	{
 		TheAftermath example(deviceManager);
