@@ -4,7 +4,7 @@
 
 using namespace donut;
 
-class HelloWindow : public app::IRenderPass {
+class TheAftermath : public app::IRenderPass {
 public:
 	using IRenderPass::IRenderPass;
 
@@ -13,7 +13,7 @@ public:
 	}
 
 	void Animate(float fElapsedTimeSeconds) override {
-		GetDeviceManager()->SetInformativeWindowTitle("Hello Window");
+		//GetDeviceManager()->SetInformativeWindowTitle("Hello Window");
 	}
 };
 
@@ -24,14 +24,14 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	deviceParams.enableDebugRuntime = true;
 	deviceParams.enableNvrhiValidationLayer = true;
 #endif
-	if (!deviceManager->CreateWindowDeviceAndSwapChain(deviceParams, "Hello Window"))
+	if (!deviceManager->CreateWindowDeviceAndSwapChain(deviceParams, "TheAftermath"))
 	{
 		log::fatal("Cannot initialize a graphics device with the requested parameters");
 		return 1;
 	}
 
 	{
-		HelloWindow example(deviceManager);
+		TheAftermath example(deviceManager);
 		if (example.Init())
 		{
 			deviceManager->AddRenderPassToBack(&example);
