@@ -23,3 +23,4 @@ set(DONUT_WITH_VULKAN OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(donut)
 add_subdirectory(examples/hello_window)
+add_subdirectory(game)
