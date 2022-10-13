@@ -5,6 +5,10 @@
 
 using namespace donut;
 
+struct GameState {
+
+};
+
 class TheAftermath : public app::IRenderPass {
 public:
 	using IRenderPass::IRenderPass;
