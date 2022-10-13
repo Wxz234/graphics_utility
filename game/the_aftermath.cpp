@@ -26,7 +26,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	deviceParams.enableDebugRuntime = true;
 	deviceParams.enableNvrhiValidationLayer = true;
 #endif
-	if (!deviceManager->CreateWindowDeviceAndSwapChain(deviceParams, "TheAftermath"))
+	if (!deviceManager->CreateWindowDeviceAndSwapChain(deviceParams, "The Aftermath"))
 	{
 		log::fatal("Cannot initialize a graphics device with the requested parameters");
 		return 1;
