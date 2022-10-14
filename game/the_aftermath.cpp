@@ -1,6 +1,7 @@
 #include <Windows.h>
 
 #include <donut/app/DeviceManager.h>
+#include <nvrhi/nvrhi.h>
 #include <GLFW/glfw3.h>
 
 using namespace donut;
@@ -10,11 +11,17 @@ struct GameState {
 };
 
 class TheAftermath : public app::IRenderPass {
+	nvrhi::CommandListHandle m_CommandList;
 public:
 	using IRenderPass::IRenderPass;
 
 	bool Init() {
+		m_CommandList = GetDevice()->createCommandList();
 		return true;
+	}
+
+	void Render() {
+
 	}
 };
 

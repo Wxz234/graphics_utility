@@ -1,4 +1,8 @@
-add_executable(the_aftermath WIN32 "the_aftermath.cpp")
+add_executable(the_aftermath WIN32 
+    "the_aftermath.cpp" 
+    "pass.cpp"
+    "pass.h"
+)
 target_link_libraries(the_aftermath PRIVATE donut_core donut_render donut_app donut_engine)
 set_target_properties(the_aftermath PROPERTIES FOLDER "Game/The Aftermath")
 
